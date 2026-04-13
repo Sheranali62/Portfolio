@@ -1,0 +1,110 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
+      {/* HERO */}
+      <section className="text-center py-16">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl font-bold"
+        >
+          Sheran Ali
+        </motion.h1>
+        <p className="text-lg mt-2 text-gray-600">
+          Aspiring Software Developer | Oracle APEX | SQL | Web Development
+        </p>
+        <div className="mt-4 flex gap-3 justify-center">
+          <Button>Download CV</Button>
+          <Button variant="outline">Contact Me</Button>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="max-w-3xl mx-auto py-10">
+        <h2 className="text-2xl font-semibold mb-3">About Me</h2>
+        <p className="text-gray-600">
+          I am a Computer Science student passionate about software development
+          and database systems. I specialize in Oracle APEX, SQL, and web
+          development. I enjoy building real-world projects and continuously
+          improving my technical skills.
+        </p>
+      </section>
+
+      {/* SKILLS */}
+      <section className="max-w-3xl mx-auto py-10">
+        <h2 className="text-2xl font-semibold mb-3">Skills</h2>
+        <div className="flex flex-wrap gap-2">
+          {["SQL", "Oracle APEX", "HTML", "CSS", "JavaScript", "Database Design"].map(
+            (skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 bg-white shadow rounded-full text-sm"
+              >
+                {skill}
+              </span>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section className="max-w-5xl mx-auto py-10">
+        <h2 className="text-2xl font-semibold mb-6">Projects</h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="text-xl font-bold">Student Management System</h3>
+              <p className="text-gray-600 mt-2">
+                Built using Oracle APEX and SQL to manage student records with
+                full CRUD functionality.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="text-xl font-bold">Visitor Management System</h3>
+              <p className="text-gray-600 mt-2">
+                A system to track and manage visitor entries with structured
+                database storage.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="text-xl font-bold">Web Development Projects</h3>
+              <p className="text-gray-600 mt-2">
+                Small frontend projects using HTML, CSS, and JavaScript for UI
+                practice.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="text-xl font-bold">SQL Practice Work</h3>
+              <p className="text-gray-600 mt-2">
+                Worked on queries, joins, and database design exercises to
+                improve backend skills.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="text-center py-12">
+        <h2 className="text-2xl font-semibold">Contact</h2>
+        <p className="text-gray-600 mt-2">Email: yourname@email.com</p>
+        <p className="text-gray-600">Phone: 03XX-XXXXXXX</p>
+        <Button className="mt-4">Hire Me</Button>
+      </section>
+    </div>
+  );
+}
